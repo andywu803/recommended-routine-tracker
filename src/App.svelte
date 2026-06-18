@@ -5,9 +5,9 @@
   // Sections of the Recommended Routine. Each exercise toggles "done" (green) on tap.
   const sections = [
     { title: 'Warm-Up', items: ['Warm-Up'] },
-    { title: 'First Pair', items: ['Pull-up Progression', 'Squat Progression'] },
+    { title: 'First Pair', items: ['Pull-Up Progression', 'Squat Progression'] },
     { title: 'Second Pair', items: ['Dip Progression', 'Hinge Progression'] },
-    { title: 'Third Pair', items: ['Row Progression', 'Push-up Progression'] },
+    { title: 'Third Pair', items: ['Row Progression', 'Push-Up Progression'] },
     {
       title: 'Core Triplet',
       items: [
@@ -23,6 +23,10 @@
 
   function toggle(key) {
     done[key] = !done[key];
+  }
+
+  function reset() {
+    done = {};
   }
 </script>
 
@@ -51,6 +55,8 @@
       </div>
     </section>
   {/each}
+
+  <button class="reset" onclick={reset}>Reset All</button>
 </main>
 
 <style>
@@ -115,5 +121,18 @@
   button.done {
     background: #1f7a3d;
     border-color: #2ea84f;
+  }
+
+  button.reset {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #b8b8b8;
+    background: transparent;
+    border-color: #3d3d3d;
+  }
+
+  button.reset:active {
+    background: #2c2c2c;
   }
 </style>
